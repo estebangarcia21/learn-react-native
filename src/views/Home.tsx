@@ -1,22 +1,41 @@
-import theme from '@app/utils/theme';
-import useGoogleFonts from '@app/utils/useGoogleFonts';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { RoundedButton } from '../../components/RoundedButton';
+import { HorizontalDivider } from '../components/HorizontalDivider';
+import theme from '../utils/theme';
 
 export default function Home() {
-  const googleFontsLoaded = useGoogleFonts();
-
-  if (!googleFontsLoaded) {
-    return <Text>Loading...</Text>;
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.overview}>
-        <Text style={styles.addonText}>@frhs_fullstack</Text>
-        <Text style={[styles.title, { marginVertical: 4 }]}>$0.00</Text>
+        <Text style={styles.addonText}>@Stevemmmmm</Text>
+        <Text style={[styles.title, { marginVertical: 4 }]}>
+          500 Social Credit
+        </Text>
       </View>
-      <View style={{ flex: 4 }}></View>
+
+      <View style={styles.contentContainer}>
+        <View style={styles.contentCard}>
+          <View>
+            <Text style={{ fontFamily: 'Inter_600SemiBold', fontSize: 24 }}>
+              Earn Social Credit
+            </Text>
+
+            <HorizontalDivider />
+
+            <Text style={styles.text}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </Text>
+          </View>
+
+          <View>
+            <RoundedButton
+              title="Start Earning Credit Today"
+              borderRadius={999}
+            />
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
@@ -28,7 +47,7 @@ const styles = StyleSheet.create({
   },
   overview: {
     flex: 2,
-    backgroundColor: '#004bec',
+    backgroundColor: theme.colors.blue,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -37,14 +56,33 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 34
   },
+  contentContainer: {
+    flex: 4,
+    position: 'relative'
+  },
+  contentCard: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginHorizontal: 15,
+    backgroundColor: 'white',
+    shadowColor: 'rgba(0, 0, 0, 0.466)',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    borderRadius: 20,
+    elevation: 5,
+    height: Dimensions.get('window').height,
+    transform: [{ translateY: -50 }],
+    padding: 20
+  },
   addonText: {
     fontSize: 14,
-    color: theme.colors.grayText,
-    fontFamily: 'Inter_400Regular'
+    color: theme.colors.gray,
+    fontFamily: theme.fonts.primary.normal
   },
   text: {
-    fontSize: 34,
-    fontWeight: '600',
-    marginBottom: 20
+    fontSize: 14,
+    fontFamily: theme.fonts.primary.normal
   }
 });

@@ -1,5 +1,5 @@
-import { InitialLoadingScreen } from '@app/components/InitialLoadingScreen';
 import React from 'react';
+import { InitialLoadingScreen } from './src/components/InitialLoadingScreen';
 import useGoogleFonts from './src/utils/useGoogleFonts';
 import Home from './src/views/Home';
 

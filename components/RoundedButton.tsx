@@ -1,13 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import theme from '../src/utils/theme';
 
 export interface RoundedButtonProps {
   title: string;
+  borderRadius?: number;
 }
 
-export function RoundedButton({ title }: RoundedButtonProps) {
+export function RoundedButton({
+  title,
+  borderRadius = 2.5
+}: RoundedButtonProps) {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={[styles.button, { borderRadius }]}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
@@ -16,13 +21,12 @@ export function RoundedButton({ title }: RoundedButtonProps) {
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: '#007AFF',
+    backgroundColor: theme.colors.blue,
     paddingVertical: 10,
-    width: '100%',
-    borderRadius: 2
+    width: '100%'
   },
   text: {
-    color: '#fff',
-    fontWeight: '500'
+    color: 'white',
+    fontFamily: theme.fonts.primary.semibold
   }
 });
