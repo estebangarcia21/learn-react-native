@@ -3,7 +3,6 @@ import { HomeProps } from '../views/Home';
 
 export type RootStackParamList = {
   Home: HomeProps;
-  Buy: HomeProps;
 };
 
 export type ScreenProps<T extends keyof RootStackParamList> =

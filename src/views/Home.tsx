@@ -2,12 +2,12 @@ import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { RoundedButton } from '../../components/RoundedButton';
 import { HorizontalDivider } from '../components/HorizontalDivider';
-import { ScreenProps } from '../utils/componentProps';
+import { ScreenProps } from '../utils/nativeStackNavigation';
 import theme from '../utils/theme';
 
 export type HomeProps = undefined;
 
-export default function Home({ navigation }: ScreenProps<'Home'>) {
+export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.overview}>
@@ -35,7 +35,6 @@ export default function Home({ navigation }: ScreenProps<'Home'>) {
             <RoundedButton
               title="Start Earning Credit Today"
               borderRadius={999}
-              navigation={navigation}
             />
           </View>
         </View>
