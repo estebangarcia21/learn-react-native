@@ -4,7 +4,8 @@ import React from 'react';
 import { InitialLoadingScreen } from './src/components/InitialLoadingScreen';
 import { RootStackParamList } from './src/utils/nativeStackNavigation';
 import useGoogleFonts from './src/utils/useGoogleFonts';
-import Home from './src/views/Home';
+import CreatePalette from './src/screens/CreatePalette';
+import Home from './src/screens/Home';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,6 +23,7 @@ export default function App() {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="CreatePalette" component={CreatePalette} />
       </Stack.Navigator>
     </NavigationContainer>
   );
