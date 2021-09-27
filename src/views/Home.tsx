@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 15,
     backgroundColor: 'white',
-    shadowColor: 'rgba(0, 0, 0, 0.466)',
+    shadowColor: theme.colors.shadow,
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.4,
     shadowRadius: 8,
